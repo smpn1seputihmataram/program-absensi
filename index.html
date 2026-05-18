@@ -3,7 +3,7 @@
             <option>Alpa</option>
         </select>
 
-        <button>Simpan Absensi</button>
+        <button onclick="tambahAbsensi()">Simpan Absensi</button>
     </div>
 
     <div class="card">
@@ -42,7 +42,7 @@
                 <td>Sakit</td>
             </tr>
 
-        </table>
+        <table id="tabelAbsensi">
     </div>
 
 </div>
@@ -50,6 +50,29 @@
 <footer>
     © 2026 SMP N 1 Seputih Mataram
 </footer>
+<script>
+function tambahAbsensi() {
 
+    let kelas = document.querySelectorAll("select")[0].value;
+    let tanggal = document.querySelector("input[type='date']").value;
+    let nama = document.querySelector("input[type='text']").value;
+    let keterangan = document.querySelectorAll("select")[1].value;
+
+    let tabel = document.getElementById("tabelAbsensi");
+
+    let nomor = tabel.rows.length;
+
+    let row = tabel.insertRow();
+
+    row.insertCell(0).innerHTML = nomor;
+    row.insertCell(1).innerHTML = kelas;
+    row.insertCell(2).innerHTML = tanggal;
+    row.insertCell(3).innerHTML = nama;
+    row.insertCell(4).innerHTML = keterangan;
+
+    alert("Absensi berhasil ditambahkan");
+
+}
+</script>
 </body>
 </html>
