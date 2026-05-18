@@ -1,174 +1,66 @@
 <!DOCTYPE html>
-<html lang="id">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Absensi SMP N 1 Seputih Mataram</title>
+            <tr>
+                <th>No</th>
+                <th>Kelas</th>
+                <th>Tanggal</th>
+                <th>Nama Siswa</th>
+                <th>Keterangan</th>
+            </tr>
 
-<style>
+            <tr>
+                <td>1</td>
+                <td>7.1</td>
+                <td>2026-05-18</td>
+                <td>Andi Saputra</td>
+                <td>Hadir</td>
+            </tr>
 
-body{
-    font-family: Arial;
-    background:#f2f2f2;
-    margin:0;
-    padding:0;
-}
+            <tr>
+                <td>2</td>
+                <td>7.2</td>
+                <td>2026-05-18</td>
+                <td>Siti Aisyah</td>
+                <td>Izin</td>
+            </tr>
 
-header{
-    background:#0d6efd;
-    color:white;
-    text-align:center;
-    padding:20px;
-}
+            <tr>
+                <td>3</td>
+                <td>7.3</td>
+                <td>2026-05-18</td>
+                <td>Budi Santoso</td>
+                <td>Sakit</td>
+            </tr>
 
-.container{
-    width:90%;
-    margin:auto;
-    margin-top:20px;
-}
-
-.card{
-    background:white;
-    padding:20px;
-    border-radius:10px;
-    margin-bottom:20px;
-    box-shadow:0 2px 5px rgba(0,0,0,0.2);
-}
-
-input,select{
-    width:100%;
-    padding:10px;
-    margin-top:5px;
-    margin-bottom:15px;
-}
-
-button{
-    background:#198754;
-    color:white;
-    border:none;
-    padding:10px 20px;
-    border-radius:5px;
-    cursor:pointer;
-}
-
-button:hover{
-    background:#157347;
-}
-
-table{
-    width:100%;
-    border-collapse:collapse;
-}
-
-table,th,td{
-    border:1px solid #ccc;
-}
-
-th{
-    background:#0d6efd;
-    color:white;
-    padding:10px;
-}
-
-td{
-    padding:10px;
-    text-align:center;
-}
-
-</style>
-
-</head>
-<body>
-
-<header>
-<h1>PROGRAM ABSENSI SISWA</h1>
-<h2>SMP N 1 Seputih Mataram</h2>
-</header>
-
-<div class="container">
-
-<div class="card">
-
-<h3>Form Absensi</h3>
-
-<label>Kelas</label>
-<select id="kelas">
-<option>7.1</option>
-<option>7.2</option>
-<option>7.3</option>
-<option>7.4</option>
-<option>7.5</option>
-<option>7.6</option>
-<option>7.7</option>
-</select>
-
-<label>Tanggal</label>
-<input type="date" id="tanggal">
-
-<label>Nama Siswa</label>
-<input type="text" id="nama">
-
-<label>Keterangan</label>
-<select id="keterangan">
-<option>Hadir</option>
-<option>Izin</option>
-<option>Sakit</option>
-<option>Alpa</option>
-</select>
-
-<button onclick="tambahAbsensi()">Simpan Absensi</button>
+        </table>
+    </div>
 
 </div>
 
-<div class="card">
-
-<h3>Data Absensi</h3>
-
-<table id="tabelAbsensi">
-
-<tr>
-<th>No</th>
-<th>Kelas</th>
-<th>Tanggal</th>
-<th>Nama</th>
-<th>Keterangan</th>
-</tr>
-
-</table>
-
-</div>
+<footer>
+    © 2026 SMP N 1 Seputih Mataram
+</footer>
 
 </div>
 
 <script>
 
-function tambahAbsensi(){
+function login(){
 
-    let kelas = document.getElementById("kelas").value;
-    let tanggal = document.getElementById("tanggal").value;
-    let nama = document.getElementById("nama").value;
-    let keterangan = document.getElementById("keterangan").value;
+    let username = document.getElementById("username").value;
+    let password = document.getElementById("password").value;
 
-    if(nama == "" || tanggal == ""){
-        alert("Nama dan tanggal harus diisi");
-        return;
+    if(username == "admin" && password == "123"){
+
+        document.getElementById("loginPage").style.display = "none";
+        document.getElementById("absensiPage").style.display = "block";
+
+        alert("Login berhasil");
+
+    }else{
+
+        alert("Username atau password salah");
+
     }
-
-    let tabel = document.getElementById("tabelAbsensi");
-
-    let row = tabel.insertRow();
-
-    let nomor = tabel.rows.length - 1;
-
-    row.insertCell(0).innerHTML = nomor;
-    row.insertCell(1).innerHTML = kelas;
-    row.insertCell(2).innerHTML = tanggal;
-    row.insertCell(3).innerHTML = nama;
-    row.insertCell(4).innerHTML = keterangan;
-
-    document.getElementById("nama").value = "";
-
-    alert("Absensi berhasil ditambahkan");
 
 }
 
