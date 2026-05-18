@@ -1,0 +1,226 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Absensi Siswa SMP N 1 Seputih Mataram</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f2f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: #0d6efd;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            width: 95%;
+            margin: auto;
+            margin-top: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        select, input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+
+        th {
+            background: #0d6efd;
+            color: white;
+            padding: 10px;
+        }
+
+        td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        button {
+            background: #198754;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #157347;
+        }
+
+        footer {
+            background: #0d6efd;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="loginPage" style="width:350px;margin:100px auto;background:white;padding:30px;border-radius:10px;box-shadow:0 2px 5px rgba(0,0,0,0.2);">
+
+<h2 style="text-align:center;color:#0d6efd;">LOGIN ABSENSI</h2>
+
+<label>Username</label>
+<input type="text" id="username" placeholder="Masukkan username">
+
+<label>Password</label>
+<input type="password" id="password" placeholder="Masukkan password">
+
+<button onclick="login()" style="width:100%;">Login</button>
+
+<p style="text-align:center;margin-top:15px;">
+Username: <b>admin</b><br>
+Password: <b>123</b>
+</p>
+
+</div>
+
+<div id="absensiPage" style="display:none;">
+
+<header>
+    <h1>PROGRAM ABSENSI SISWA</h1>
+    <h2>SMP N 1 Seputih Mataram</h2>
+</header>
+
+<div class="container">
+
+    <div class="card">
+        <h3>Form Absensi</h3>
+
+        <label>Kelas</label>
+        <select>
+            <option>7.1</option>
+            <option>7.2</option>
+            <option>7.3</option>
+            <option>7.4</option>
+            <option>7.5</option>
+            <option>7.6</option>
+            <option>7.7</option>
+        </select>
+
+        <label>Tanggal</label>
+        <input type="date">
+
+        <label>Nama Siswa</label>
+        <input type="text" placeholder="Masukkan nama siswa">
+
+        <label>Keterangan</label>
+        <select>
+            <option>Hadir</option>
+            <option>Izin</option>
+            <option>Sakit</option>
+            <option>Alpa</option>
+        </select>
+
+        <button>Simpan Absensi</button>
+    </div>
+
+    <div class="card">
+        <h3>Data Absensi</h3>
+
+        <table>
+            <tr>
+                <th>No</th>
+                <th>Kelas</th>
+                <th>Tanggal</th>
+                <th>Nama Siswa</th>
+                <th>Keterangan</th>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>7.1</td>
+                <td>2026-05-18</td>
+                <td>Andi Saputra</td>
+                <td>Hadir</td>
+            </tr>
+
+            <tr>
+                <td>2</td>
+                <td>7.2</td>
+                <td>2026-05-18</td>
+                <td>Siti Aisyah</td>
+                <td>Izin</td>
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <td>7.3</td>
+                <td>2026-05-18</td>
+                <td>Budi Santoso</td>
+                <td>Sakit</td>
+            </tr>
+
+        </table>
+    </div>
+
+</div>
+
+<footer>
+    © 2026 SMP N 1 Seputih Mataram
+</footer>
+
+</div>
+
+<script>
+
+function login(){
+
+    let username = document.getElementById("username").value;
+    let password = document.getElementById("password").value;
+
+    if(username == "admin" && password == "123"){
+
+        document.getElementById("loginPage").style.display = "none";
+        document.getElementById("absensiPage").style.display = "block";
+
+        alert("Login berhasil");
+
+    }else{
+
+        alert("Username atau password salah");
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
